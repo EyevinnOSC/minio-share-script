@@ -1,6 +1,6 @@
-# MinIO Share Script
+<h1 align="center">MinIO Share Script</h1>
 
-This script uploads a file to a specified MinIO bucket and returns a presigned URL for the uploaded file.
+<p align="center">This script uploads a file to a specified MinIO bucket and returns a presigned URL for the uploaded file.</p>
 
 ---
 
