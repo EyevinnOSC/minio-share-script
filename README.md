@@ -1,15 +1,14 @@
 # MinIO Share Script
 
-This script generates presigned URLs for files in a MinIO bucket and saves them in a JSON file. The JSON file is then uploaded back to the same bucket.
+This script uploads a file to a specified MinIO bucket and returns a presigned URL for the uploaded file.
 
 ---
 
 ## Features
 
-- Generates presigned URLs for objects in MinIO.
-- Creates a JSON file containing the file name and presigned URL.
-- Uploads the JSON file back to the same bucket.
-- User-friendly with interactive input for bucket name and file name.
+- Uploads a file to a MinIO bucket.
+- Generates a presigned URL for the uploaded file.
+- Outputs the URL directly in the console for easy sharing.
 
 ---
 
@@ -75,32 +74,31 @@ For more instructions please see this [tutorial](https://docs.osaas.io/osaas.wik
   ```
 
 3.	**Follow the prompts to enter**:
-	- Bucket name: The MinIO bucket where the file is stored (e.g., webvideosolution/videos).
-	- File name: The name of the file in the bucket (e.g., example.mp4).
+	- **Bucket name:** The MinIO bucket where the file is stored (e.g.,  myBucket/myFolder).
+	- **File name:** The name of the file in the bucket (e.g., example.mp4).
 4.	**The script will**:
-	- Generate a presigned URL.
-	- Create a JSON file (e.g., example.mp4_url.json) containing the file name and URL.
-	- Upload the JSON file to the same bucket.
+	- Upload the file to the specified bucket.
+	- Generate a presigned URL for the uploaded file.
+	- Print the URL to the console.
 
 ### Example
 ```bash
 ./share_url_script.sh
-Enter the bucket name (e.g., webvideosolution/videos): webvideosolution/videos
+Enter the bucket name (e.g.,  myBucket/myFolder):  myBucket/myFolder
 Enter the file name (e.g., example.mp4): example.mp4
-Presigned URL saved in example.mp4_url.json
-JSON file uploaded to webvideosolution/videos/
+File example.mp4 uploaded to myBucket/myFolder.
+Share URL: https://your-minio-server/myBucket/MyFolder/example.mp4?X-Amz-Signature=...
 ```
 ## Important Notes
 
 - **Run the script from the same directory as the file**: This ensures the file is easily accessible without specifying long paths.
 - **Interactive Input**: The script prompts you for bucket and file names, so you don’t need to pass them as arguments.
+- **Presigned URL Output**: The generated URL is printed directly to the console for easy copying.
 
 ## Example Output
-Json
 ```bash
 {
-  "file": "example.mp4",
-  "url": "https://your-minio-server/bucket-name/example.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&..."
+  "share URL": "https://your-minio-server/myBucket/example.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&..."
 }
 ```
 ## License
