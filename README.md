@@ -25,7 +25,7 @@ This script generates presigned URLs for files in a MinIO bucket and saves them 
 
 You need to have a minIO insance running on Open Source Cloud. If you don't have it you can sign up for free and initiate your instance [here](www.osaas.io). No creditcard needed and you may try the service under the free account. 
 
-For more instructions please see this [tutorial](https://eyevinntechnology.medium.com/s3-compatible-object-storage-in-open-source-cloud-3fd055d49b83).
+For more instructions please see this [tutorial](https://docs.osaas.io/osaas.wiki/Service%3A-MinIO.html).
 
 ### Install MinIO Client (`mc`)
 
